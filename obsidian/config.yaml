@@ -1,5 +1,5 @@
 name: Obsidian
-version: "0.60"
+version: "0.61"
 slug: ha-obsidian
 description: Runs Obsidian within your Home Assistant setup providing integration of live-features
 url: https://github.com/crazyrokr/hassio-addons/tree/main/obsidian
@@ -26,11 +26,17 @@ environment:
   DISABLE_DRI3: "true"
   HARDEN_DESKTOP: "true"
   HARDEN_OPENBOX: "true"
-  SELKIES_UI_SHOW_SIDEBAR: "false"
   NO_DECOR: "true"
+  SELKIES_UI_SHOW_SIDEBAR: "false"
+  SELKIES_FRAMERATE: "15"
+  SELKIES_MANUAL_WIDTH: "1280"
+  SELKIES_MANUAL_HEIGHT: "720"
+  SELKIES_IS_MANUAL_RESOLUTION_MODE: "true"
+  SELKIES_ENCODER: "x264enc"
+  SELKIES_USE_CPU: "true"
 ingress: true
 ingress_port: 3000
 ports:
-  3000/tcp: null
-  3001/tcp: null
-  8082/tcp: null
+  3000/tcp: 3000
+  3001/tcp: 3001
+  8082/tcp: 8082
