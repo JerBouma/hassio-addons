@@ -27,9 +27,17 @@ environment:
   HARDEN_DESKTOP: "true"
   HARDEN_OPENBOX: "true"
   NO_DECOR: "true"
+  # --- Smooth Scrolling Optimizations ---
+  # Higher stripes (4-8) help the CPU process scrolling motion faster
+  SELKIES_STRIPES: "4"
+  # Reducing the "Damage Threshold" makes the streamer react faster to small scroll movements
+  SELKIES_DAMAGE_THRESHOLD: "5"
+  # Lowering Paint-Over trigger ensures the "sharp" frame doesn't interrupt a long scroll
+  SELKIES_PAINT_OVER_TRIGGER: "10"
+  
   # --- Sharper Image Settings ---
   SELKIES_UI_SHOW_SIDEBAR: "false"
-  SELKIES_FRAMERATE: "15"
+  SELKIES_FRAMERATE: "20"
   SELKIES_MANUAL_WIDTH: "1920"
   SELKIES_MANUAL_HEIGHT: "1080"
   SELKIES_IS_MANUAL_RESOLUTION_MODE: "true"
@@ -40,9 +48,13 @@ environment:
   # Enable high-quality paint-over (sharpens the image once you stop moving the mouse)
   SELKIES_USE_PAINT_OVER_QUALITY: "true"
   SELKIES_PAINT_OVER_JPEG_QUALITY: "100"
-  # CPU/Encoder settings
+
+  # --- Network Smoothness ---
+  # H264 is better for motion than JPEG if your network can handle it
   SELKIES_ENCODER: "x264enc"
-  SELKIES_USE_CPU: "true"
+  SELKIES_H264_STREAMING_MODE: "true"
+  SELKIES_H264_CRF: "28"
+
 ingress: true
 ingress_port: 3000
 ports:
