@@ -28,6 +28,15 @@ environment:
   HARDEN_OPENBOX: "true"
   NO_DECOR: "true"
 
+  # --- Input & UI Responsiveness ---
+  # Disables the internal Selkies cursor rendering and uses your browser's local cursor
+  # This makes mouse movement feel 0-latency because it doesn't wait for a round-trip
+  SELKIES_USE_BROWSER_CURSORS: "true"
+  # Disables the gamepad driver which saves background CPU cycles if you aren't gaming
+  NO_GAMEPAD: "true"
+  # Keeps the UI lean
+  SELKIES_UI_SHOW_STATS: "false"
+
   # --- Rendering Speed Optimizations ---
   # Lowering the damage duration makes the server send updates faster when Obsidian is busy rendering
   SELKIES_DAMAGE_DUR: "10"
