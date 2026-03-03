@@ -1,5 +1,5 @@
 name: Obsidian
-version: "0.61"
+version: "0.62"
 slug: ha-obsidian
 description: Runs Obsidian within your Home Assistant setup providing integration of live-features
 url: https://github.com/crazyrokr/hassio-addons/tree/main/obsidian
@@ -27,11 +27,20 @@ environment:
   HARDEN_DESKTOP: "true"
   HARDEN_OPENBOX: "true"
   NO_DECOR: "true"
+  # --- Sharper Image Settings ---
   SELKIES_UI_SHOW_SIDEBAR: "false"
   SELKIES_FRAMERATE: "15"
-  SELKIES_MANUAL_WIDTH: "1280"
-  SELKIES_MANUAL_HEIGHT: "720"
+  SELKIES_MANUAL_WIDTH: "1920"
+  SELKIES_MANUAL_HEIGHT: "1080"
   SELKIES_IS_MANUAL_RESOLUTION_MODE: "true"
+  # Increasing DPI makes icons/text smaller and sharper (96 is default, 120 is crisper)
+  SELKIES_SCALING_DPI: "96" 
+  # JPEG Quality: 40 is blurry, 75-80 is the sweet spot for sharpness vs speed
+  SELKIES_JPEG_QUALITY: "80"
+  # Enable high-quality paint-over (sharpens the image once you stop moving the mouse)
+  SELKIES_USE_PAINT_OVER_QUALITY: "true"
+  SELKIES_PAINT_OVER_JPEG_QUALITY: "100"
+  # CPU/Encoder settings
   SELKIES_ENCODER: "x264enc"
   SELKIES_USE_CPU: "true"
 ingress: true
